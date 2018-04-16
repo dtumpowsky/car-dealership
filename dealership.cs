@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 public class Car
 {
-  public string Name;
-  public int Mileage;
-  public int Price;
+  private string Name;
+  private int Mileage;
+  private int Price;
 
   public Car(string carName, int carMileage, int carPrice)
   {
@@ -74,14 +74,14 @@ public class dealership
     List<Car> CarsMatchingSearch = new List<Car>();
     foreach(Car model in inTheLot)
     {
-      if (model.Price < maxPrice && model.Mileage < maxMileage)
+      if (model.GetPrice() < maxPrice && model.GetMileage() < maxMileage)
       {
         CarsMatchingSearch.Add(model);
       }
     }
     foreach(Car model in CarsMatchingSearch)
     {
-      Console.WriteLine(model.Name);
+      Console.WriteLine(model.GetName());
     }
   }
 }
